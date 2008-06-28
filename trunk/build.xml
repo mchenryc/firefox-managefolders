@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<project name="managefolders" default="xpi" basedir=".">
+
+  <target name="xpi">
+    <zip zipfile="managefolders.xpi">
+      <fileset dir="${basedir}">
+        <include name="chrome/**"/>
+        <include name="chrome.manifest"/>
+        <include name="install.rdf"/>
+      </fileset>
+    </zip>
+  </target>
+
+</project>
