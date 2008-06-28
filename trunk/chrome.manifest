@@ -1,0 +1,2 @@
+content	managefolders	chrome/content/
+overlay	chrome://browser/content/browser.xul	chrome://managefolders/content/managefolders.xul
