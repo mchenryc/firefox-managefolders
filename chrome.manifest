@@ -1,2 +1,3 @@
 content	managefolders	chrome/content/
 overlay	chrome://browser/content/browser.xul	chrome://managefolders/content/managefolders.xul
+overlay	chrome://browser/content/bookmarks/bookmarksPanel.xul	chrome://managefolders/content/managefolders.xul
