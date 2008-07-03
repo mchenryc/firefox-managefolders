@@ -6,7 +6,7 @@
 
   <!-- Firefox Bookmark Context Menu -->
   <popup id="placesContext">
-    <menuitem label="Manage Folder" id="placesContext_manageFolder" insertafter="placesContext_openLinks:tabs" oncommand="ManageFoldersPlugin.showOrganizer(event)" />
+    <menuitem label="Manage Folder" id="placesContext_manageFolder" insertafter="placesContext_openLinks:tabs" oncommand="ManageFolders.showOrganizer(event)" />
   </popup>
 
 </overlay>
