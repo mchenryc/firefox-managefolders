@@ -7,7 +7,7 @@
 
 		<em:id>firefox-managefolders@googlecode.com</em:id>
 		<em:name>Manage Folders</em:name>
-		<em:version>0.4</em:version>
+		<em:version>0.5</em:version>
 		<em:type>2</em:type>
 		<em:description>Brings back the "Manage Folder" context menu item of Firefox bookmarks</em:description>
 		<em:creator>Jed Brown</em:creator>
