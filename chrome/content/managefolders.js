@@ -51,6 +51,8 @@ var ManageFolders = (function()
       }
       else 
         selectFolder()
+      
+      organizer.window.focus()
     }
   }
   return MF
