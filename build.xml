@@ -2,90 +2,16 @@
 
 <project name="managefolders" default="xpi" basedir=".">
 
-  <xmlproperty file="install.rdf"/>
-  
-  <property name="xpi.file"
-            value="managefolders-${RDF.Description.em:version}.xpi"/>
+  <target name="xpi">
+    <xmlproperty file="install.rdf"/>
 
-  <property name="xpi.tx.file"
-            value="managefolders-tx-${RDF.Description.em:version}.xpi"/>
-
-  <target name="xpi"
-          description="create the installable xpi file">
-    <zip zipfile="${xpi.file}">
-      <fileset dir="${basedir}">
-        <include name="chrome/**"/>
-         <exclude name="chrome/locale/*/amo.*"/>
-        <include name="chrome.manifest"/>
-        <include name="install.rdf"/>
-      </fileset>
-    </zip>
-  </target>
-
-  <target name="xpi-tx"
-          description="create xpi with amo.properties files for translation">
-    <zip zipfile="${xpi.tx.file}">
+    <zip zipfile="managefolders-${RDF.Description.em:version}.xpi">
       <fileset dir="${basedir}">
         <include name="chrome/**"/>
         <include name="chrome.manifest"/>
         <include name="install.rdf"/>
       </fileset>
     </zip>
-  </target>
-
-  <target name="check-tx"
-          description="Sanity check .dtd/.properties, install.rdf, chrome.manifest">
-    <!--
-      foreach dtd in chrome/locale/en-US/*.dtd
-        var entities = readEntitiesFromDTD(dtd);
-        foreach tx in chrome/locale/*
-          if (tx=='en-US') { continue; }
-          var txDtd = file(tx, dtd.filename);
-          if (! txDtd.exists()) { WARN; continue; }
-          var txEntities = readEntitiesFromDTD(txDtd);
-          foreach e in entities
-            if (! txEntities.contains(e)) { WARN; }
-          
-      foreach prop in chrome/locale/en-US/*.properties
-        var props = readProperties(prop);
-        foreach tx in chrome/locale/*
-          if (tx=='en-US') continue;
-          var txProp = file(tx, prop.filename);
-          if (! txProp.exists()) { WARN; continue; }
-          var txProps = readProperties(txProp);
-          foreach p in props
-            if (! txProps.contains(p)) { WARN; }
-
-      mfLocales = readLocalsFromManifest('chrome.manifest');
-      rdfLocales = readLocalsFromRdf('install.rdf');
-      
-      foreach tx in chrome/locale/*
-        if (! mfLocales.contains(tx)) { WARN; }
-        if (tx=='en-US') { continue; }
-        if (! rdfLocales.contains(tx)) { WARN: }
-
-    -->
-  </target>
-
-  <target name="upload" depends="clean,xpi"
-          description="Upload xpi file to google code as a 'download'">
-
-    <taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask"
-             classpath="lib/ant-googlecode-0.0.1.jar" name="gcupload"/>
-
-    <input addproperty="username" 
-           message="username (sans '@google.com')"/>
-    <input addproperty="password" 
-           message="password (from google code profile settings)"/>
-
-    <gcupload 
-        username="${username}" 
-        password="${password}" 
-        projectname="firefox-managefolders" 
-        filename="${xpi.file}" 
-        targetfilename="${xpi.file}"
-        verbose="true" 
-        summary="Manage Folders ${RDF.Description.em:version}"/>
   </target>
 
   <target name="clean">
