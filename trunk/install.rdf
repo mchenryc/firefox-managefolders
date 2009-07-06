@@ -6,10 +6,30 @@
 	<Description about="urn:mozilla:install-manifest">
 
 		<em:id>firefox-managefolders@googlecode.com</em:id>
-		<em:name>Manage Folders</em:name>
-		<em:version>0.6</em:version>
+		<em:version>1.0</em:version>
 		<em:type>2</em:type>
-		<em:description>Brings back the "Manage Folder" context menu item of Firefox bookmarks</em:description>
+
+		<em:name>Manage Folders</em:name>
+		<em:description>Adds a "Manage Folder" item to the context-menu of bookmark folders</em:description>
+
+		<em:localized>
+			<Description>
+				<em:locale>fr</em:locale>
+				<em:name>Gérer le dossier</em:name>
+				<em:description>Ajoute un élément «Gérer le dossier» au menu contextuel des dossiers de marque-pages.</em:description>
+        <!--em:translator></em:translator-->
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>de</em:locale>
+				<em:name>Lesezeichen bearbeiten</em:name>
+				<em:description>Fügt dem Lesezeichenmenü den Eintrag "Lesezeichen bearbeiten" hinzu.</em:description>
+        <!--em:translator></em:translator-->
+			</Description>
+		</em:localized>
+
 		<em:creator>Jed Brown</em:creator>
 		<em:developer>Chadwick McHenry</em:developer>
 
@@ -17,7 +37,7 @@
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>3.0</em:minVersion>
-				<em:maxVersion>3.1.*</em:maxVersion>
+				<em:maxVersion>3.5.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 
