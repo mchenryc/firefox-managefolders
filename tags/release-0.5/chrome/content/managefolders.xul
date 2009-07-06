@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<overlay id="managefoldersOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://managefolders/content/managefolders.js" />
+
+  <!-- Firefox Bookmark Context Menu -->
+  <popup id="placesContext">
+    <menuitem label="Manage Folder" id="placesContext_manageFolder" insertafter="placesContext_openLinks:tabs" oncommand="setTimeout(ManageFolders.showOrganizer,0,event)" />
+  </popup>
+
+</overlay>
