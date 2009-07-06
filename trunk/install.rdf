@@ -8,6 +8,7 @@
 		<em:id>firefox-managefolders@googlecode.com</em:id>
 		<em:version>1.0</em:version>
 		<em:type>2</em:type>
+		<em:iconURL>chrome://managefolders/content/managefolders.png</em:iconURL>
 
 		<em:name>Manage Folders</em:name>
 		<em:description>Adds a "Manage Folder" item to the context-menu of bookmark folders</em:description>
