@@ -1,29 +1,28 @@
-var ManageFolders = (function() 
+var ManageFoldersPlugin = (function() 
 {
   var folderNodeId;
   
-  var MF = {
-    init : function MF_init()
+  var MFP = {
+    init : function MFP_init()
     {
       var contextMenu = document.getElementById("placesContext");
       if (contextMenu)
         contextMenu.addEventListener("popupshowing",
-                                     MF.showHideMenuItem, false);
+                                     MFP.showHideMenuItem, false);
     },
     
-    showHideMenuItem : function MF_showHideMenuItem(event)
+    showHideMenuItem : function MFP_showHideMenuItem()
     {
-      var node = event.target._view.selectedNode
-
-      if (node) {
-        var isFolder = PlacesUtils.nodeIsFolder(node);
-        if (isFolder) folderNodeId = node.itemId;
+      var popup = document.popupNode
+      if (popup) {
+        var isFolder = PlacesUtils.nodeIsFolder(popup.node);
+        if (isFolder) folderNodeId = popup.node.itemId;
         // show or disable the 'manage folder' menu item every time the menu is rendered
         document.getElementById("placesContext_manageFolder").hidden = !isFolder;
       }
     },
     
-    showOrganizer : function MF_showOrganizer(event)
+    showOrganizer : function MFP_showOrganizer(event)
     {
       // check to see if organizer already open or open it. Needs to stay consistent
       // with the actual window opening calls found in browser-places.js
@@ -51,11 +50,9 @@ var ManageFolders = (function()
       }
       else 
         selectFolder()
-      
-      organizer.window.focus()
     }
   }
-  return MF
+  return MFP
 })()
 
-window.addEventListener("load", ManageFolders.init, false);
+window.addEventListener("load", ManageFoldersPlugin.init, false);
