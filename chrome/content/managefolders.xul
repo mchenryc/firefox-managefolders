@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://managefolders/locale/managefolders.dtd">
+
 <overlay id="managefoldersOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
@@ -6,7 +9,9 @@
 
   <!-- Firefox Bookmark Context Menu -->
   <popup id="placesContext">
-    <menuitem label="Manage Folder" id="placesContext_manageFolder" insertafter="placesContext_openLinks:tabs" oncommand="setTimeout(ManageFolders.showOrganizer,0,event)" />
+    <menuitem id="placesContext_manageFolder" insertafter="placesContext_openLinks:tabs" 
+              label="&menuItem.ManageFolder;" 
+              oncommand="setTimeout(ManageFolders.showOrganizer,0,event)" />
   </popup>
 
 </overlay>
