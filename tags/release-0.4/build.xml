@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<project name="managefolders" default="xpi" basedir=".">
+
+  <target name="xpi">
+    <xmlproperty file="install.rdf"/>
+
+    <zip zipfile="managefolders-${RDF.Description.em:version}.xpi">
+      <fileset dir="${basedir}">
+        <include name="chrome/**"/>
+        <include name="chrome.manifest"/>
+        <include name="install.rdf"/>
+      </fileset>
+    </zip>
+  </target>
+
+</project>
