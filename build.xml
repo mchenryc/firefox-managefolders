@@ -33,40 +33,6 @@
     </zip>
   </target>
 
-  <target name="check-tx"
-          description="Sanity check .dtd/.properties, install.rdf, chrome.manifest">
-    <!--
-      foreach dtd in chrome/locale/en-US/*.dtd
-        var entities = readEntitiesFromDTD(dtd);
-        foreach tx in chrome/locale/*
-          if (tx=='en-US') { continue; }
-          var txDtd = file(tx, dtd.filename);
-          if (! txDtd.exists()) { WARN; continue; }
-          var txEntities = readEntitiesFromDTD(txDtd);
-          foreach e in entities
-            if (! txEntities.contains(e)) { WARN; }
-          
-      foreach prop in chrome/locale/en-US/*.properties
-        var props = readProperties(prop);
-        foreach tx in chrome/locale/*
-          if (tx=='en-US') continue;
-          var txProp = file(tx, prop.filename);
-          if (! txProp.exists()) { WARN; continue; }
-          var txProps = readProperties(txProp);
-          foreach p in props
-            if (! txProps.contains(p)) { WARN; }
-
-      mfLocales = readLocalsFromManifest('chrome.manifest');
-      rdfLocales = readLocalsFromRdf('install.rdf');
-      
-      foreach tx in chrome/locale/*
-        if (! mfLocales.contains(tx)) { WARN; }
-        if (tx=='en-US') { continue; }
-        if (! rdfLocales.contains(tx)) { WARN: }
-
-    -->
-  </target>
-
   <target name="upload" depends="clean,xpi"
           description="Upload xpi file to google code as a 'download'">
 
@@ -84,8 +50,14 @@
         projectname="firefox-managefolders" 
         filename="${xpi.file}" 
         targetfilename="${xpi.file}"
-        verbose="true" 
-        summary="Manage Folders ${RDF.Description.em:version}"/>
+        summary="Manage Folders ${RDF.Description.em:version}"
+        verbose="true"
+        labels="Featured,Type-Package,OpSys-All"
+        />
+    <echo>
+      Don't forget to deprecate the previous release:
+        http://code.google.com/p/firefox-managefolders/downloads/list?can=3
+    </echo>
   </target>
 
   <target name="clean">
