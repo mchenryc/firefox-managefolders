@@ -6,7 +6,7 @@
 	<Description about="urn:mozilla:install-manifest">
 
 		<em:id>firefox-managefolders@googlecode.com</em:id>
-		<em:version>1.0</em:version>
+		<em:version>1.0.1.3</em:version>
 		<em:type>2</em:type>
 		<em:iconURL>chrome://managefolders/content/managefolders.png</em:iconURL>
 
@@ -18,7 +18,7 @@
 				<em:locale>fr</em:locale>
 				<em:name>Gérer le dossier</em:name>
 				<em:description>Ajoute un élément «Gérer le dossier» au menu contextuel des dossiers de marque-pages.</em:description>
-				<!--em:translator></em:translator-->
+				<em:translator>Goofy</em:translator>
 			</Description>
 		</em:localized>
 
@@ -28,6 +28,15 @@
 				<em:name>Lesezeichen bearbeiten</em:name>
 				<em:description>Fügt dem Lesezeichenmenü den Eintrag "Lesezeichen bearbeiten" hinzu.</em:description>
 				<!--em:translator></em:translator-->
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>de</em:locale>
+				<em:name>es-ES</em:name>
+				<em:description>Añade un elemento "Administrar carpeta" en el menú contextual de las carpetas de marcadores</em:description>
+				<em:translator>Proyecto Nave - http://www.proyectonave.es/</em:translator>
 			</Description>
 		</em:localized>
 
