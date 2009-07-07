@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+
+		<em:id>firefox-managefolders@googlecode.com</em:id>
+		<em:version>1.0</em:version>
+		<em:type>2</em:type>
+		<em:iconURL>chrome://managefolders/content/managefolders.png</em:iconURL>
+
+		<em:name>Manage Folders</em:name>
+		<em:description>Adds a "Manage Folder" item to the context-menu of bookmark folders</em:description>
+
+		<em:localized>
+			<Description>
+				<em:locale>fr</em:locale>
+				<em:name>Gérer le dossier</em:name>
+				<em:description>Ajoute un élément «Gérer le dossier» au menu contextuel des dossiers de marque-pages.</em:description>
+				<!--em:translator></em:translator-->
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>de</em:locale>
+				<em:name>Lesezeichen bearbeiten</em:name>
+				<em:description>Fügt dem Lesezeichenmenü den Eintrag "Lesezeichen bearbeiten" hinzu.</em:description>
+				<!--em:translator></em:translator-->
+			</Description>
+		</em:localized>
+
+		<em:creator>Jed Brown</em:creator>
+		<em:developer>Chadwick McHenry</em:developer>
+
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>3.0</em:minVersion>
+				<em:maxVersion>3.5.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+	</Description>
+
+</RDF>
