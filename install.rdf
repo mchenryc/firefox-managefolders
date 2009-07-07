@@ -18,7 +18,7 @@
 				<em:locale>fr</em:locale>
 				<em:name>Gérer le dossier</em:name>
 				<em:description>Ajoute un élément «Gérer le dossier» au menu contextuel des dossiers de marque-pages.</em:description>
-        <!--em:translator></em:translator-->
+				<!--em:translator></em:translator-->
 			</Description>
 		</em:localized>
 
@@ -27,7 +27,7 @@
 				<em:locale>de</em:locale>
 				<em:name>Lesezeichen bearbeiten</em:name>
 				<em:description>Fügt dem Lesezeichenmenü den Eintrag "Lesezeichen bearbeiten" hinzu.</em:description>
-        <!--em:translator></em:translator-->
+				<!--em:translator></em:translator-->
 			</Description>
 		</em:localized>
 
