@@ -1,0 +1,10 @@
+content	managefolders   chrome/content/
+
+overlay	chrome://browser/content/browser.xul	chrome://managefolders/content/managefolders.xul
+overlay	chrome://browser/content/bookmarks/bookmarksPanel.xul	chrome://managefolders/content/managefolders.xul
+
+locale  managefolders de     chrome/locale/de/
+locale  managefolders en-US  chrome/locale/en-US/
+locale  managefolders es-ES  chrome/locale/es-ES/
+locale  managefolders fr     chrome/locale/fr/
+locale  managefolders fr-FR  chrome/locale/fr-FR/

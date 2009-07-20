@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<project name="managefolders" default="xpi" basedir=".">
+
+  <xmlproperty file="install.rdf"/>
+  
+  <property name="xpi.file"
+            value="managefolders-${RDF.Description.em:version}.xpi"/>
+
+  <property name="xpi.tx.file"
+            value="managefolders-tx-${RDF.Description.em:version}.xpi"/>
+
+  <target name="xpi"
+          description="create the installable xpi file">
+    <zip zipfile="${xpi.file}">
+      <fileset dir="${basedir}">
+        <include name="chrome/**"/>
+         <exclude name="chrome/locale/*/amo.*"/>
+        <include name="chrome.manifest"/>
+        <include name="install.rdf"/>
+      </fileset>
+    </zip>
+  </target>
+
+  <target name="xpi-tx"
+          description="create xpi with amo.properties files for translation">
+    <zip zipfile="${xpi.tx.file}">
+      <fileset dir="${basedir}">
+        <include name="chrome/**"/>
+        <include name="chrome.manifest"/>
+        <include name="install.rdf"/>
+      </fileset>
+    </zip>
+  </target>
+
+  <target name="upload" depends="clean,xpi"
+          description="Upload xpi file to google code as a 'download'">
+
+    <taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask"
+             classpath="lib/ant-googlecode-0.0.1.jar" name="gcupload"/>
+
+    <input addproperty="username" 
+           message="username (sans '@google.com')"/>
+    <input addproperty="password" 
+           message="password (from google code profile settings)"/>
+
+    <gcupload 
+        username="${username}" 
+        password="${password}" 
+        projectname="firefox-managefolders" 
+        filename="${xpi.file}" 
+        targetfilename="${xpi.file}"
+        summary="Manage Folders ${RDF.Description.em:version}"
+        verbose="true"
+        labels="Featured,Type-Package,OpSys-All"
+        />
+    <echo>
+      Don't forget to deprecate the previous release:
+        http://code.google.com/p/firefox-managefolders/downloads/list?can=3
+    </echo>
+  </target>
+
+  <target name="clean">
+    <delete dir="${basedir}" includes="*.xpi"/>
+  </target>
+
+</project>
