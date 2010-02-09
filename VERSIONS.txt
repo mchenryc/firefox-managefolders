@@ -1,4 +1,4 @@
-PENDING - Manage Folders 1.0.3
+2010-02-09 - Manage Folders 1.0.3
 
   - Updated to work with Firefox 3.7a2pre
   - The places organizer now scrolls to ensure the selected folder is
