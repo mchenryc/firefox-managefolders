@@ -16,6 +16,7 @@
       <fileset dir="${basedir}">
         <include name="chrome/**"/>
          <exclude name="chrome/locale/*/amo.*"/>
+         <exclude name="chrome/locale/*/amo.*"/>
         <include name="chrome.manifest"/>
         <include name="install.rdf"/>
       </fileset>
@@ -55,7 +56,7 @@
         labels="Featured,Type-Package,OpSys-All"
         />
     <echo>
-      Don't forget to deprecate the previous release:
+      Be sure to change 'Featured' tag to 'Deprecated' for previous release:
         http://code.google.com/p/firefox-managefolders/downloads/list?can=3
     </echo>
   </target>
