@@ -7,4 +7,8 @@ locale  managefolders de     chrome/locale/de/
 locale  managefolders en-US  chrome/locale/en-US/
 locale  managefolders es-ES  chrome/locale/es-ES/
 locale  managefolders fr     chrome/locale/fr/
-locale  managefolders fr-FR  chrome/locale/fr-FR/
+locale  managefolders pt-BR  chrome/locale/pt-BR/
+locale  managefolders pt-PT  chrome/locale/pt-PT/
+locale  managefolders ru-RU  chrome/locale/ru-RU/
+locale  managefolders sr-RS  chrome/locale/sr-RS/
+locale  managefolders zh-CN  chrome/locale/zh-CN/
