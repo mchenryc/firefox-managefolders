@@ -3,16 +3,14 @@ var ManageFolders = (function()
   var folderNodeId;
   
   var MF = {
-    init : function MF_init()
-    {
+    init : function MF_init() {
       var contextMenu = document.getElementById("placesContext");
       if (contextMenu)
         contextMenu.addEventListener("popupshowing",
                                      MF.showHideMenuItem, false);
     },
-    
-    showHideMenuItem : function MF_showHideMenuItem(event)
-    {
+
+    showHideMenuItem : function MF_showHideMenuItem(event) {
       var node = event.target._view.selectedNode
 
       if (node) {
@@ -23,8 +21,7 @@ var ManageFolders = (function()
       }
     },
     
-    showOrganizer : function MF_showOrganizer(event)
-    {
+    showOrganizer : function MF_showOrganizer(event) {
       // check to see if organizer already open or open it. Needs to stay consistent
       // with the actual window opening calls found in browser-places.js
       // http://mxr.mozilla.org/firefox/source/browser/base/content/browser-places.js#544
@@ -34,7 +31,12 @@ var ManageFolders = (function()
       function selectFolder() {
         // The tree object, aka organizer.PlacesOrganizer._places (vai places.js)
         var places = organizer.document.getElementById("placesList");
-        places.selectItems([folderNodeId]) ;
+	if (places) {
+	    places.selectItems([folderNodeId]);
+	    if (places.currentIndex)
+		places.treeBoxObject.ensureRowIsVisible(places.currentIndex);
+	    places.focus();
+	}
       }
       
       if (!organizer) {
@@ -49,9 +51,10 @@ var ManageFolders = (function()
                                "", "chrome,toolbar=yes,dialog=no,resizable");
         organizer.addEventListener("load", selectOnLoad, false);
       }
-      else 
+      else {
         selectFolder()
-      
+      }
+
       organizer.window.focus()
     }
   }
