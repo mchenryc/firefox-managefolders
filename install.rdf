@@ -6,12 +6,13 @@
 	<Description about="urn:mozilla:install-manifest">
 
 		<em:id>firefox-managefolders@googlecode.com</em:id>
-		<em:version>1.0.3</em:version>
+		<em:version>1.0.4</em:version>
 		<em:type>2</em:type>
 		<em:iconURL>chrome://managefolders/content/managefolders.png</em:iconURL>
 
 		<em:name>Manage Folders</em:name>
 		<em:description>Adds a "Manage Folder" item to the context-menu of bookmark folders</em:description>
+		<em:homepageURL>http://code.google.com/p/firefox-managefolders/</em:homepageURL>
 
 		<em:creator>Jed Brown</em:creator>
 		<em:developer>Chadwick McHenry</em:developer>
@@ -20,10 +21,28 @@
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>3.0</em:minVersion>
-				<em:maxVersion>3.7a2pre</em:maxVersion>
+				<em:maxVersion>4.0b7</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 
+
+		<em:localized>
+			<Description>
+				<em:locale>bg-BG</em:locale>
+				<em:name>Управление на папки</em:name>
+				<em:description>Добавя елемент "Управление на папка" в контекста меню на папките за маркери</em:description>
+				<em:translator>ExaFlop (of BabelZilla)</em:translator>
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>cs</em:locale>
+				<em:name>Spravuj složky</em:name>
+				<em:description>Umístí do místní nabídky složek se záložkami příkaz "Spravovat složku"</em:description>
+				<em:translator>Palec - http://palecek.ic.cz/</em:translator>
+			</Description>
+		</em:localized>
 
 		<em:localized>
 			<Description>
@@ -49,6 +68,15 @@
 				<em:name>Gérer le dossier</em:name>
 				<em:description>Ajoute un lien «Gérer le dossier» au menu contextuel des dossiers de marque-pages</em:description>
 				<em:translator>Goofy (of BabelZilla)</em:translator>
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>ja</em:locale>
+				<em:name>Manage Folders</em:name>
+				<em:description>ブックマークフォルダのコンテキストメニューに「フォルダ管理」を追加します</em:description>
+				<em:translator>drry - http://drry.jp/</em:translator>
 			</Description>
 		</em:localized>
 
@@ -81,10 +109,19 @@
 
 		<em:localized>
 			<Description>
-				<em:locale>sr-RS</em:locale>
+				<em:locale>sr</em:locale>
 				<em:name>Управљање фасциклама</em:name>
 				<em:description>Додаје „Управљање фасциклама” у садржајни мени фасцикли са забелешкама</em:description>
-				<em:translator>Republic of Srpska</em:translator>
+				<em:translator>ДакСРБИЈА (of Babelzilla)</em:translator>
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>uk-UA</em:locale>
+				<em:name>Управління теками</em:name>
+				<em:description>Додає пункт "Управління текою" у контекстне меню тек закладок.</em:description>
+				<em:translator>Володимир Савчук Volodymyr Savchuk</em:translator>
 			</Description>
 		</em:localized>
 
