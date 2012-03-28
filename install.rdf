@@ -6,7 +6,7 @@
 	<Description about="urn:mozilla:install-manifest">
 
 		<em:id>firefox-managefolders@googlecode.com</em:id>
-		<em:version>1.0.4</em:version>
+		<em:version>1.0.5</em:version>
 		<em:type>2</em:type>
 		<em:iconURL>chrome://managefolders/content/managefolders.png</em:iconURL>
 
@@ -21,7 +21,7 @@
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>3.0</em:minVersion>
-				<em:maxVersion>4.0b7</em:maxVersion>
+				<em:maxVersion>11.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 
@@ -77,6 +77,15 @@
 				<em:name>Manage Folders</em:name>
 				<em:description>ブックマークフォルダのコンテキストメニューに「フォルダ管理」を追加します</em:description>
 				<em:translator>drry - http://drry.jp/</em:translator>
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>ko-KR</em:locale>
+				<em:name>폴더 관리</em:name>
+				<em:description>북마크 폴더의 문맥 메뉴에 "폴더 관리" 항목을 추가합니다</em:description>
+				<em:translator>surefx (of Babelzilla)</em:translator>
 			</Description>
 		</em:localized>
 
