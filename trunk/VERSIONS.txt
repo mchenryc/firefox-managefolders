@@ -1,3 +1,7 @@
+2010-10-20 - Manage Folders 1.0.5
+
+  - Localization for Korean (ko-KR)
+
 2010-10-20 - Manage Folders 1.0.4
 
   - Localizations for Bulgarian (bg-BG), Czech (cs), Japanese (ja),
