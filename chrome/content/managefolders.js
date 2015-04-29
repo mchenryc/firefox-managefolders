@@ -5,16 +5,18 @@ var ManageFolders = (function()
   var MF = {
     init : function MF_init() {
       var contextMenu = document.getElementById("placesContext");
-      if (contextMenu)
-        contextMenu.addEventListener("popupshowing",
-                                     MF.showHideMenuItem, false);
+
+      if (contextMenu) {
+        contextMenu.addEventListener("popupshowing", MF.showHideMenuItem, false);
+      }
     },
 
     showHideMenuItem : function MF_showHideMenuItem(event) {
-      var node = event.target._view.selectedNode
+      var node = event.target._view.selectedNode;
 
       if (node) {
         var isFolder = PlacesUtils.nodeIsFolder(node);
+
         if (isFolder) {
           folderNodeUri = node.uri;
         }
@@ -26,44 +28,50 @@ var ManageFolders = (function()
     },
 
     showOrganizer : function MF_showOrganizer(event) {
+
+      function selectFolder() {
+        // The tree object, aka organizer.PlacesOrganizer._places (via places.js)
+        var places = organizer.document.getElementById("placesList");
+
+        if (places) {
+          // Feels fragile... but as of FF34, selectItems(...) no longer searches within Toolbar
+          places.selectPlaceURI(folderNodeUri + '&excludeItems=1&expandQueries=0');
+
+          if (places.currentIndex) {
+            places.treeBoxObject.ensureRowIsVisible(places.currentIndex);
+          }
+
+          places.focus();
+        }
+      }
+
+      function selectOnLoad() {
+        // postpone folder selection until the organizer init method has executed (see places.js)
+        setTimeout(function () { selectFolder(); }, 1);
+        organizer.removeEventListener("load", selectOnLoad, false);
+      }
+
       // check to see if organizer already open or open it. Needs to stay consistent
       // with the actual window opening calls found in browser-places.js
       // http://mxr.mozilla.org/firefox/source/browser/base/content/browser-places.js#544
       var wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
       var organizer = wm.getMostRecentWindow("Places:Organizer");
 
-      function selectFolder() {
-        // The tree object, aka organizer.PlacesOrganizer._places (via places.js)
-        var places = organizer.document.getElementById("placesList");
-        if (places) {
-          // Feels fragile... but as of FF34, selectItems(...) no longer searches within Toolbar
-          places.selectPlaceURI(folderNodeUri + '&excludeItems=1&expandQueries=0');
-          if (places.currentIndex)
-            places.treeBoxObject.ensureRowIsVisible(places.currentIndex);
-          places.focus();
-        }
-      }
-
       if (!organizer) {
-        // once organizer window is loaded, postpone folder selection until after
-        // the organizer init method is executed (see places.js)
-        function selectOnLoad() {
-          setTimeout(function () { selectFolder(); }, 1);
-          organizer.removeEventListener("load", selectOnLoad, false);
-        }
-
         organizer = openDialog("chrome://browser/content/places/places.xul",
                                "", "chrome,toolbar=yes,dialog=no,resizable");
         organizer.addEventListener("load", selectOnLoad, false);
       }
       else {
-        selectFolder()
+        selectFolder();
       }
 
-      organizer.window.focus()
+      organizer.window.focus();
     }
-  }
-  return MF
-})()
+  };
+
+  return MF;
+
+})();
 
 window.addEventListener("load", ManageFolders.init, false);
