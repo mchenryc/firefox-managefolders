@@ -1,3 +1,9 @@
+2015-04-29 - Manage Folders 1.0.6
+
+  - Fix regression introuduced in FF34 preventing folder selection.
+  - Fix issue where menu item was disabled if previous click was
+    on non-folder bookmark.
+
 2010-10-20 - Manage Folders 1.0.5
 
   - Localization for Korean (ko-KR)
