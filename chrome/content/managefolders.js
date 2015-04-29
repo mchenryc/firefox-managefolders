@@ -48,7 +48,7 @@ var ManageFolders = (function()
         // once organizer window is loaded, postpone folder selection until after
         // the organizer init method is executed (see places.js)
         function selectOnLoad() {
-          setTimeout(selectFolder, 1);
+          setTimeout(function () { selectFolder(); }, 1);
           organizer.removeEventListener("load", selectOnLoad, false);
         }
 
