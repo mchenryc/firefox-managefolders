@@ -3,7 +3,7 @@
 <project name="managefolders" default="xpi" basedir=".">
 
   <xmlproperty file="install.rdf"/>
-  
+
   <property name="xpi.file"
             value="managefolders-${RDF.Description.em:version}.xpi"/>
 
@@ -40,21 +40,20 @@
     <taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask"
              classpath="lib/ant-googlecode-0.0.1.jar" name="gcupload"/>
 
-    <input addproperty="username" 
+    <input addproperty="username"
            message="username (sans '@google.com')"/>
-    <input addproperty="password" 
+    <input addproperty="password"
            message="password (from google code profile settings)"/>
 
-    <gcupload 
-        username="${username}" 
-        password="${password}" 
-        projectname="firefox-managefolders" 
-        filename="${xpi.file}" 
+    <gcupload
+        username="${username}"
+        password="${password}"
+        projectname="firefox-managefolders"
+        filename="${xpi.file}"
         targetfilename="${xpi.file}"
         summary="Manage Folders ${RDF.Description.em:version}"
         verbose="true"
-        labels="Featured,Type-Package,OpSys-All"
-        />
+        labels="Featured,Type-Package,OpSys-All"/>
     <echo>
       Be sure to change 'Featured' tag to 'Deprecated' for previous release:
         http://code.google.com/p/firefox-managefolders/downloads/list?can=3

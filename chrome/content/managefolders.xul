@@ -10,8 +10,8 @@
   <!-- Firefox Bookmark Context Menu -->
   <popup id="placesContext">
     <menuitem id="placesContext_manageFolder"
-              insertafter="placesContext_openLinks:tabs" 
-              label="&menuItem.ManageFolder;" 
+              insertafter="placesContext_openLinks:tabs"
+              label="&menuItem.ManageFolder;"
               oncommand="setTimeout(ManageFolders.showOrganizer,0,event)" />
   </popup>
 
