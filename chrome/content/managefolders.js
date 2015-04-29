@@ -17,7 +17,8 @@ var ManageFolders = (function()
         var isFolder = PlacesUtils.nodeIsFolder(node);
         if (isFolder) folderNodeId = node.itemId;
         // show or disable the 'manage folder' menu item every time the menu is rendered
-        document.getElementById("placesContext_manageFolder").hidden = !isFolder;
+        var el = document.getElementById("placesContext_manageFolder");
+        el.hidden = el.disabled = !isFolder;
       }
     },
 
