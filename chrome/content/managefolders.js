@@ -1,6 +1,6 @@
 var ManageFolders = (function()
 {
-  var folderNodeId;
+  var folderNodeUri;
 
   var MF = {
     init : function MF_init() {
@@ -15,7 +15,10 @@ var ManageFolders = (function()
 
       if (node) {
         var isFolder = PlacesUtils.nodeIsFolder(node);
-        if (isFolder) folderNodeId = node.itemId;
+        if (isFolder) {
+          folderNodeUri = node.uri;
+        }
+
         // show or disable the 'manage folder' menu item every time the menu is rendered
         var el = document.getElementById("placesContext_manageFolder");
         el.hidden = el.disabled = !isFolder;
@@ -30,10 +33,11 @@ var ManageFolders = (function()
       var organizer = wm.getMostRecentWindow("Places:Organizer");
 
       function selectFolder() {
-        // The tree object, aka organizer.PlacesOrganizer._places (vai places.js)
+        // The tree object, aka organizer.PlacesOrganizer._places (via places.js)
         var places = organizer.document.getElementById("placesList");
         if (places) {
-          places.selectItems([folderNodeId]);
+          // Feels fragile... but as of FF34, selectItems(...) no longer searches within Toolbar
+          places.selectPlaceURI(folderNodeUri + '&excludeItems=1&expandQueries=0');
           if (places.currentIndex)
             places.treeBoxObject.ensureRowIsVisible(places.currentIndex);
           places.focus();
