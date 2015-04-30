@@ -12,7 +12,7 @@
 
 		<em:name>Manage Folders</em:name>
 		<em:description>Adds a "Manage Folder" item to the context-menu of bookmark folders</em:description>
-		<em:homepageURL>http://code.google.com/p/firefox-managefolders/</em:homepageURL>
+		<em:homepageURL>https://github.com/mchenryc/firefox-managefolders</em:homepageURL>
 
 		<em:creator>Jed Brown</em:creator>
 		<em:developer>Chadwick McHenry</em:developer>
