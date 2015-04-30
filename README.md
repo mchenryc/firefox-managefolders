@@ -9,3 +9,6 @@ To translate Manage Folders into your language, visit the Babelzilla site's [Man
 
 ### History
 This extension was inspired by an earlier version written by Jed Brown, posted to the [Mozillazine forums](http://forums.mozillazine.org/viewtopic.php?f=19&t=322160). It has been rewritten for the extensive changes to both the Firefox Bookmark management, and XUL popup system.
+
+### License
+Distributed under the MPL 2.0 license: https://www.mozilla.org/MPL/2.0/
