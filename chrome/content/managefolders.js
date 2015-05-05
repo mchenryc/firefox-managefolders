@@ -12,13 +12,21 @@ var ManageFolders = (function()
     },
 
     showHideMenuItem : function MF_showHideMenuItem(event) {
+
+      // getting rediculous. Temporary, until selectItems(...) is fixed upstream.
+      function trimUriQueryParams(uri) {
+        var i = uri.indexOf('&');
+
+        return (i === -1) ? uri : uri.substring(0, i);
+      }
+
       var node = event.target._view.selectedNode;
 
       if (node) {
         var isFolder = PlacesUtils.nodeIsFolder(node);
 
         if (isFolder) {
-          folderNodeUri = node.uri;
+          folderNodeUri = trimUriQueryParams(node.uri);
         }
 
         // show or disable the 'manage folder' menu item every time the menu is rendered
