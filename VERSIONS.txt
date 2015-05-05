@@ -1,3 +1,8 @@
+2015-05-05 - Manage Folders 1.0.7
+
+  - Fix regression introuduced in FF34 preventing folder selection
+    from Bookmarks Sidebar.
+
 2015-04-29 - Manage Folders 1.0.6
 
   - Fix regression introuduced in FF34 preventing folder selection.
